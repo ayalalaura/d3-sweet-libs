@@ -247,10 +247,10 @@ lSpace = WIDTH/allGroup.length;
 
   function updateWDI() {
 
-    sec.selectAll('').remove();
+    // remove elements with class "line"
+    sec.selectAll('.line').remove();
 
     wdiGroup.forEach(function(d, i) {
-
       sec.append('svg:path')
         .attr('d', lineGen(d.values))
         .attr('stroke', function(d, j) {
@@ -258,7 +258,8 @@ lSpace = WIDTH/allGroup.length;
         })
         .attr('stroke-width', 2)
         .attr('id', 'line_' + d.key)
-        .attr('fill', 'none');
+        .attr('fill', 'none')
+        .attr("class","line");
 
       sec.append("text")
         .attr("x", 900) // .attr("x", (lSpace/2)+i*lSpace)
@@ -267,27 +268,14 @@ lSpace = WIDTH/allGroup.length;
         .attr("class","legend")
         .attr("text-anchor", "start")
         .text(d.key);
-
-        // onclick for each line
-        // .on('click',function(){
-        //     var active   = d.active ? false : true;
-        //     var opacity = active ? 0 : 1;
-        //     d3.select("#line_" + d.key).style("opacity", opacity);
-
-        //     d.active = active;
-        // })
     });
   }
 
   function updateLion() {
+
+    sec.selectAll('.line').remove();
+
     lionGroup.forEach(function(d, i) {
-
-      // var active   = d.active ? false : true;
-      // var opacity = active ? 0 : 1;
-      // d3.select("#line_" + d.key).style("opacity", opacity);
-
-      // d.active = active;
-
       sec.append('svg:path')
         .attr('d', lineGen(d.values))
         .attr('stroke', function(d, j) {
@@ -295,7 +283,8 @@ lSpace = WIDTH/allGroup.length;
         })
         .attr('stroke-width', 2)
         .attr('id', 'line_' + d.key)
-        .attr('fill', 'none');
+        .attr('fill', 'none')
+        .attr("class","line");
 
       sec.append("text")
         .attr("x", 900) // .attr("x", (lSpace/2)+i*lSpace)
@@ -304,19 +293,13 @@ lSpace = WIDTH/allGroup.length;
         .attr("class","legend")
         .attr("text-anchor", "start")
         .text(d.key);
-
-        // onclick for each line
-        // .on('click',function(){
-        //     var active   = d.active ? false : true;
-        //     var opacity = active ? 0 : 1;
-        //     d3.select("#line_" + d.key).style("opacity", opacity);
-
-        //     d.active = active;
-        // })
     });
   }
 
   function updateMatt() {
+
+    sec.selectAll('.line').remove();
+
     mattGroup.forEach(function(d, i) {
       sec.append('svg:path')
         .attr('d', lineGen(d.values))
@@ -325,7 +308,8 @@ lSpace = WIDTH/allGroup.length;
         })
         .attr('stroke-width', 2)
         .attr('id', 'line_' + d.key)
-        .attr('fill', 'none');
+        .attr('fill', 'none')
+        .attr("class","line");
 
       sec.append("text")
         .attr("x", 900) // .attr("x", (lSpace/2)+i*lSpace)
@@ -334,19 +318,13 @@ lSpace = WIDTH/allGroup.length;
         .attr("class","legend")
         .attr("text-anchor", "start")
         .text(d.key);
-
-        // onclick for each line
-        // .on('click',function(){
-      // var active   = d.active ? false : true;
-      // var opacity = active ? 0 : 1;
-      // d3.select("#line_" + d.key).style("opacity", opacity);
-
-      // d.active = active;
-        // })
     });
   }
 
-    function updateBand() {
+  function updateBand() {
+
+    sec.selectAll('.line').remove();
+
     bandGroup.forEach(function(d, i) {
       sec.append('svg:path')
         .attr('d', lineGen(d.values))
@@ -355,7 +333,8 @@ lSpace = WIDTH/allGroup.length;
         })
         .attr('stroke-width', 2)
         .attr('id', 'line_' + d.key)
-        .attr('fill', 'none');
+        .attr('fill', 'none')
+        .attr("class","line");
 
       sec.append("text")
         .attr("x", 900) // .attr("x", (lSpace/2)+i*lSpace)
@@ -364,19 +343,13 @@ lSpace = WIDTH/allGroup.length;
         .attr("class","legend")
         .attr("text-anchor", "start")
         .text(d.key);
-
-        // onclick for each line
-        // .on('click',function(){
-      // var active   = d.active ? false : true;
-      // var opacity = active ? 0 : 1;
-      // d3.select("#line_" + d.key).style("opacity", opacity);
-
-      // d.active = active;
-        // })
     });
   }
 
   function updateLeo() {
+
+    sec.selectAll('.line').remove();
+
     leoGroup.forEach(function(d, i) {
       sec.append('svg:path')
         .attr('d', lineGen(d.values))
@@ -385,7 +358,8 @@ lSpace = WIDTH/allGroup.length;
         })
         .attr('stroke-width', 2)
         .attr('id', 'line_' + d.key)
-        .attr('fill', 'none');
+        .attr('fill', 'none')
+        .attr("class","line");
 
        sec.append("text")
         .attr("x", 900) // .attr("x", (lSpace/2)+i*lSpace)
@@ -394,15 +368,6 @@ lSpace = WIDTH/allGroup.length;
         .attr("class","legend")
         .attr("text-anchor", "start")
         .text(d.key);
-
-        // onclick for each line
-        // .on('click',function(){
-        //     var active   = d.active ? false : true;
-        //     var opacity = active ? 0 : 1;
-        //     d3.select("#line_" + d.key).style("opacity", opacity);
-
-        //     d.active = active;
-        // })
     });
   }
 
